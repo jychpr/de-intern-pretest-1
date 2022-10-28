@@ -1,0 +1,44 @@
+import os
+import json
+import glob
+import pandas as pd
+import sys
+
+# DECLARE PATH
+data_path_accounts = '../data/accounts/'
+data_path_cards = '../data/cards/'
+data_path_savings_accounts = '../data/savings_accounts/'
+
+# DECLARE VARIABLES
+dataframe_accounts = []
+dataframe_cards = []
+dataframe_savings_accounts = []
+temp_df_accounts = []
+temp_df_cards = []
+temp_df_savings_accounts = []
+
+def process_json_data(filepath, dataframe, temp_df):
+    json_data = os.path.join(filepath, '*.json')
+    file_list = glob.glob(json_data)
+
+    # CREATE TABLE ACCOUNTS
+    for file in file_list:
+        data = pd.read_json(file)
+        temp_df.append(data)
+    dataframe = pd.concat(temp_df, ignore_index=False)
+
+    return dataframe
+
+print("ACCOUNTS TABLE")
+table_accounts = process_json_data(data_path_accounts, dataframe_accounts, temp_df_accounts)
+print(table_accounts)
+print("\n")
+print("CARDS TABLE")
+table_cards = process_json_data(data_path_cards, dataframe_cards, temp_df_cards)
+print(table_cards)
+print("\n")
+print("SAVINGS ACCOUNTS TABLE")
+table_savings_accounts = process_json_data(data_path_savings_accounts, dataframe_savings_accounts, temp_df_savings_accounts)
+print(table_savings_accounts)
+
+
