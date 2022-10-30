@@ -7,8 +7,7 @@ LABEL release-date="2022-10-30"
 WORKDIR /workstation
 
 COPY final_requirements.txt final_requirements.txt
-COPY dwh-coding-challenge ./
+COPY dwh-coding-challenge dwh-coding-challenge
 
 RUN pip install -r final_requirements.txt
 
-CMD [ "python", "./dwh-coding-challenge/solution/complete_answer.py"]
