@@ -1,6 +1,10 @@
-# de-intern-pretest-1
+# byorange-de-intern-assessment-submission
+byOrange Data Engineer Intern Assessment Submission
 
-data engineer intern pretest repository
+Link to Solution README.md
 
-company: byOrange - Disclosed Company
-role: Data Engineer Intern
+https://github.com/jychpr/byorange-de-intern-assessment/tree/main/dwh-coding-challenge/solution
+
+or
+
+https://github.com/jychpr/byorange-de-intern-assessment/blob/main/dwh-coding-challenge/solution/README.md
